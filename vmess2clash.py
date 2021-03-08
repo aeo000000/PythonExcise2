@@ -101,7 +101,7 @@ def main():
                 vmessLst.append(string_temp["str2"])
         # print(vmessLst)
         # 所有名称
-        nameLst = [ a['ps'] for a in vmessLst]
+        nameLst = [ a['ps'].replace('\\/','/') for a in vmessLst]
         # print(nameLst)
         clashLst = [ vmess2Clash(a) for a in vmessLst ]
         # print(clashLst)
