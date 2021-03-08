@@ -111,3 +111,18 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
+# 出现这个问题的最主要原因还是在于本地仓库和远程仓库实际上是独立的两个仓库。假如我之前是直接clone的方式在本地建立起远程github仓库的克隆本地仓库就不会有这问题了。
+
+# 查阅了一下资料，发现可以在pull命令后紧接着使用--allow-unrelated-history选项来解决问题（该选项可以合并两个独立启动仓库的历史）。
+# ————————————————
+# 版权声明：本文为CSDN博主「铁乐与猫」的原创文章，遵循CC 4.0 BY-SA版权协议，转载请附上原文出处链接及本声明。
+# 原文链接：https://blog.csdn.net/u012145252/article/details/80628451
+
+# git pull PythonExcise2 main --allow-unrelated-histories
+
+# git push PythonExcise2 main:main
+# 直接强行推送过去更新
+# git push -f origin master
+# git push -f PythonExcise2 main:main     -f为强制更新
